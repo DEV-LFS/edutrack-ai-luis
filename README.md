@@ -1,5 +1,5 @@
 # EduTrack AI
 
 Projeto da disciplina Innovation Lab – Faculdade Impacta  
-Aluno: Luis Felipe Sebastião  git add .
+Aluno: Luis Felipe Sebastião 
 2025/2026
