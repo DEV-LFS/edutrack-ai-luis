@@ -1,2 +1,5 @@
-# edu-track-ai-luis
-Projeto acadêmico para Plataforma de tarefa do aluno
+# EduTrack AI
+
+Projeto da disciplina Innovation Lab – Faculdade Impacta  
+Aluno: Seu Nome  
+2025/2026
