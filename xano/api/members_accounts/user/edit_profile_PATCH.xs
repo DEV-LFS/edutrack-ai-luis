@@ -34,16 +34,6 @@ query "user/edit_profile" verb=PATCH {
       field_value = $user.id
       data = $inputs|filter_empty_text:""
     } as $updated_user_info
-  
-    // Create an event log for updated user info
-    function.run "Getting Started Template/create_event_log" {
-      input = {
-        user_id   : $user.id
-        account_id: $user.account_id
-        action    : "updated_user_information"
-        metadata  : {}|set:"updated_info":$updated_user_info|set:"previous_info":$user
-      }
-    } as $event_log
   }
 
   response = $updated_user_info

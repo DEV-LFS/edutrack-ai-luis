@@ -38,16 +38,6 @@ query "message/send_welcome_email" verb=POST {
       subject = $email_subject
       message = $email_body
     } as $send_email
-  
-    // Log welcome email sent for user
-    function.run "Getting Started Template/create_event_log" {
-      input = {
-        user_id   : $input.user_id
-        account_id: $user_record.account_id
-        action    : "welcome_email_sent"
-        metadata  : {}
-      }
-    } as $event_log
   }
 
   response = $send_email

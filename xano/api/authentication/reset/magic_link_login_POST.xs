@@ -78,16 +78,6 @@ query "reset/magic-link-login" verb=POST {
       }
       }
     } as $user1
-  
-    // Create an event log for password reset login
-    function.run "Getting Started Template/create_event_log" {
-      input = {
-        user_id   : $user.id
-        account_id: $user.account_id
-        action    : "login_for_password_reset"
-        metadata  : $user1
-      }
-    } as $event_log
   }
 
   response = {authToken: $auth_token, user_id: $user1.id}

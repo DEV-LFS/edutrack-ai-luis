@@ -14,16 +14,6 @@ query "auth/me" verb=GET {
       field_value = $auth.id
       output = ["id", "created_at", "name", "email", "account_id", "role"]
     } as $user
-  
-    // Create an event log for get user record
-    function.run "Getting Started Template/create_event_log" {
-      input = {
-        user_id   : $user.id
-        account_id: $user.account_id
-        action    : "get_auth_user"
-        metadata  : $user
-      }
-    } as $event_log
   }
 
   response = $user
